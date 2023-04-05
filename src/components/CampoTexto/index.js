@@ -1,7 +1,6 @@
 import "./CampoTexto.css";
 
 const CampoTexto = (props) => {
-  console.log("Datos: ", props.titulo);
   const placeholderModificado = `${props.placeholder}...`;
   return (
     <div className="campo-texto">
