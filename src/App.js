@@ -8,7 +8,38 @@ import Footer from "./components/Footer";
 
 function App() {
   const [mostrarFormulario, actualizarMostrar] = useState(false);
-  const [colaboradores, actualizarColaboradores] = useState([]);
+  const [colaboradores, actualizarColaboradores] = useState([
+    {
+      equipo: "Front End",
+      foto: "https://github.com/harlandlohora.png",
+      nombre: "Harland Lohora",
+      puesto: "Instructor",
+    },
+    {
+      equipo: "programacion",
+      foto: "https://github.com/genesysaluralatam.png",
+      nombre: "Genesys Rondon",
+      puesto: "Desarrolladora de software e instructora",
+    },
+    {
+      equipo: "UX y Diseño",
+      foto: "https://github.com/JeanmarieAluraLatam.png",
+      nombre: "Jeanmarie Quijada",
+      puesto: "Instructora en Alura Latam",
+    },
+    {
+      equipo: "programacion",
+      foto: "https://github.com/christianpva.png",
+      nombre: "Christian Velasco",
+      puesto: "Instructor",
+    },
+    {
+      equipo: "Innovacion y Gestion",
+      foto: "https://github.com/JoseDarioGonzalezCha.png",
+      nombre: "Jose Gonzales",
+      puesto: "Dev FullStack",
+    },
+  ]);
   //Ternario --> condicion ? seMuestra: noSeMuestra
   //condicion && seMuestra
 
@@ -21,6 +52,11 @@ function App() {
     console.log("Nuevo colaborador", colaborador);
     //Spread operator
     actualizarColaboradores([...colaboradores, colaborador]);
+  };
+
+  //Eliminar colaborador
+  const eliminarColaborador = () => {
+    console.log("eliminar colaborador");
   };
 
   //Lista de equipos
@@ -81,6 +117,7 @@ function App() {
           colaboradores={colaboradores.filter(
             (colaborador) => colaborador.equipo === equipo.titulo
           )}
+          eliminarColaborador={eliminarColaborador}
         />
       ))}
 
